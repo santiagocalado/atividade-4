@@ -1,0 +1,8 @@
+public function atualizar($id, $nome, $email) {
+    $id = (int)$id;
+    $nome = $this->conn->real_escape_string($nome);
+    $email = $this->conn->real_escape_string($email);
+
+    $sql = "UPDATE usuarios SET nome='$nome', email='$email' WHERE id=$id";
+    return $this->conn->query($sql);
+}
