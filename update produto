@@ -1,0 +1,9 @@
+public function atualizar($id, $nome, $quantidade, $preco) {
+    $id = (int)$id;
+    $nome = $this->conn->real_escape_string($nome);
+    $quantidade = (int)$quantidade;
+    $preco = (float)$preco;
+
+    $sql = "UPDATE produtos SET nome='$nome', quantidade=$quantidade, preco=$preco WHERE id=$id";
+    return $this->conn->query($sql);
+}
