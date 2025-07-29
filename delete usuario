@@ -1,0 +1,5 @@
+public function deletar($id) {
+    $id = (int)$id;
+    $sql = "DELETE FROM usuarios WHERE id=$id";
+    return $this->conn->query($sql);
+}
